@@ -1,0 +1,91 @@
+[30-Sep-2018 20:48:28 UTC] PHP Fatal error:  Call to undefined method Categorias_model::listar_categorias() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Home.php on line 9
+[30-Sep-2018 20:48:44 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/template/header.php on line 63
+[30-Sep-2018 20:52:46 UTC] PHP Fatal error:  Call to undefined function limpar() in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/template/header.php on line 63
+[30-Sep-2018 20:52:54 UTC] PHP Fatal error:  Call to undefined function limpar() in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/template/header.php on line 63
+[01-Oct-2018 17:49:41 UTC] PHP Fatal error:  Call to undefined method Categorias_model::lista_destaques() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Home.php on line 17
+[08-Oct-2018 17:11:02 UTC] PHP Fatal error:  Call to undefined method Categorias_model::adicionar() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Categoria.php on line 40
+[09-Oct-2018 14:42:34 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Usuarios.php on line 39
+[11-Oct-2018 19:38:41 UTC] PHP Fatal error:  Call to undefined function apenasADM() in /home/valltech/public_html/dev/CodeIgniter/application/views/backend/template/template.php on line 61
+[21-Nov-2018 01:19:28 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Slide.php on line 77
+[22-Nov-2018 12:35:39 UTC] PHP Fatal error:  Call to undefined method Textos_model::lista_textos() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Texto.php on line 18
+[22-Nov-2018 19:33:12 UTC] PHP Fatal error:  Call to a member function set_rules() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Texto.php on line 45
+[22-Nov-2018 22:39:33 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/home.php on line 563
+[23-Nov-2018 00:47:09 UTC] PHP Fatal error:  Call to undefined method Imagem_model::lista_imagems() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Imagem_Controller.php on line 11
+[23-Nov-2018 13:48:55 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/backend/galeria/cadastrar.php on line 46
+[23-Nov-2018 13:50:22 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/backend/galeria/cadastrar.php on line 46
+[23-Nov-2018 13:50:51 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/backend/galeria/cadastrar.php on line 46
+[23-Nov-2018 13:51:51 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/backend/galeria/cadastrar.php on line 46
+[23-Nov-2018 13:52:50 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/backend/galeria/cadastrar.php on line 46
+[23-Nov-2018 14:21:37 UTC] PHP Fatal error:  Call to undefined function remove_accents() in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/sobre.php on line 67
+[23-Nov-2018 14:22:26 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/sobre.php on line 67
+[24-Nov-2018 22:18:09 UTC] PHP Fatal error:  Call to undefined method Chale_model::lista_chale() in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Chale_Controller.php on line 139
+[09-Dec-2018 00:25:37 UTC] PHP Fatal error:  Call to a member function lista_textos_geral() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Home_Controller.php on line 18
+[09-Dec-2018 00:39:29 UTC] PHP Fatal error:  Using $this when not in object context in /home/valltech/public_html/dev/CodeIgniter/application/helpers/funcoes_helper.php on line 99
+[09-Dec-2018 00:40:46 UTC] PHP Fatal error:  Call to a member function lista_textos_geral() on null in /home/valltech/public_html/dev/CodeIgniter/application/helpers/funcoes_helper.php on line 99
+[09-Dec-2018 00:41:01 UTC] PHP Fatal error:  Using $this when not in object context in /home/valltech/public_html/dev/CodeIgniter/application/helpers/funcoes_helper.php on line 99
+[09-Dec-2018 00:42:48 UTC] PHP Fatal error:  Call to a member function lista_textos_geral() on null in /home/valltech/public_html/dev/CodeIgniter/application/helpers/funcoes_helper.php on line 99
+[09-Dec-2018 00:44:05 UTC] PHP Fatal error:  Using $this when not in object context in /home/valltech/public_html/dev/CodeIgniter/application/helpers/funcoes_helper.php on line 99
+[09-Dec-2018 01:26:36 UTC] PHP Fatal error:  Call to a member function model() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Chales_Controller.php on line 7
+[09-Dec-2018 01:28:14 UTC] PHP Fatal error:  Call to a member function model() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Chales_Controller.php on line 10
+[09-Dec-2018 01:28:32 UTC] PHP Fatal error:  Call to a member function model() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Chales_Controller.php on line 10
+[09-Dec-2018 01:37:36 UTC] PHP Fatal error:  Call to a member function model() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Chales_Controller.php on line 6
+[09-Dec-2018 01:38:45 UTC] PHP Fatal error:  Call to a member function model() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Chales_Controller.php on line 8
+[09-Dec-2018 01:40:43 UTC] PHP Fatal error:  Call to a member function model() on null in /home/valltech/public_html/dev/CodeIgniter/application/controllers/Chales_Controller.php on line 8
+[17-Dec-2018 13:41:19 UTC] PHP Fatal error:  Cannot redeclare class Textos_model in /home/valltech/public_html/dev/CodeIgniter/application/models/Contatos_model.php on line 0
+[17-Dec-2018 14:00:14 UTC] PHP Fatal error:  Call to undefined method Textos_model::lista_contatos() in /home/valltech/public_html/dev/CodeIgniter/application/helpers/funcoes_helper.php on line 104
+[17-Dec-2018 14:00:32 UTC] PHP Fatal error:  Call to a member function lista_contatos() on null in /home/valltech/public_html/dev/CodeIgniter/application/helpers/funcoes_helper.php on line 104
+[17-Dec-2018 14:14:15 UTC] PHP Fatal error:  Call to undefined function strip_image_tags() in /home/valltech/public_html/dev/CodeIgniter/application/views/frontend/contato.php on line 37
+[11-Jun-2019 03:14:00 UTC] PHP Fatal error:  Cannot use isset() on the result of a function call (you can use "null !== func()" instead) in /home/valltech/public_html/dev/prime/application/views/backend/login.php on line 15
+[11-Jun-2019 21:26:44 UTC] PHP Fatal error:  Using $this when not in object context in /home/valltech/public_html/dev/prime/application/helpers/funcoes_helper.php on line 59
+[10-Aug-2019 22:12:08 UTC] PHP Parse error:  syntax error, unexpected 'DIE' (T_EXIT), expecting ',' or ';' in /home/valltech/public_html/dev/prime/index.php on line 58
+[10-Aug-2019 23:41:33 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formulario() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[10-Aug-2019 23:46:45 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[10-Aug-2019 23:47:20 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formulariosx() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:02:03 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formulariosx() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:03:09 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:05:00 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:07:17 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:07:23 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:12:19 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:12:30 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:13:43 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:14:04 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:24:15 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:24:53 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formulario_Controller.php on line 27
+[11-Aug-2019 00:28:59 UTC] PHP Fatal error:  Call to undefined method Contatos_model::lista_formularios() in /home/valltech/public_html/dev/prime/application/controllers/Formularios_Controller.php on line 16
+[12-Aug-2019 17:58:15 UTC] PHP Fatal error:  Call to undefined method Secao_model::lista_secao() in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 16
+[12-Aug-2019 19:35:08 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 42
+[12-Aug-2019 19:36:28 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 42
+[12-Aug-2019 19:40:14 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 42
+[12-Aug-2019 19:42:49 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 44
+[12-Aug-2019 19:43:27 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 44
+[12-Aug-2019 19:43:39 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 44
+[12-Aug-2019 19:44:30 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 44
+[12-Aug-2019 19:45:51 UTC] PHP Fatal error:  Call to a member function adicionar() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 44
+[12-Aug-2019 19:56:32 UTC] PHP Fatal error:  Call to a member function lista_secao() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 86
+[13-Aug-2019 21:17:56 UTC] PHP Fatal error:  Call to a member function lista_secao() on null in /home/valltech/public_html/dev/prime/application/controllers/Secao_Controller.php on line 86
+[15-Aug-2019 03:19:05 UTC] PHP Fatal error:  Call to undefined method Item_Controller::lista_itensByForm() in /home/valltech/public_html/dev/prime/application/controllers/Item_Controller.php on line 29
+[15-Aug-2019 03:20:04 UTC] PHP Fatal error:  Call to undefined method Item_Controller::lista_itensByForm() in /home/valltech/public_html/dev/prime/application/controllers/Item_Controller.php on line 29
+[17-Aug-2019 14:53:31 UTC] PHP Parse error:  syntax error, unexpected '<' in /home/valltech/public_html/dev/prime/application/views/backend/item/ver.php on line 40
+[17-Aug-2019 15:23:07 UTC] PHP Fatal error:  Call to undefined method Item_model::lista_itensBySecao() in /home/valltech/public_html/dev/prime/application/controllers/Item_Controller.php on line 36
+[17-Aug-2019 15:27:00 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/valltech/public_html/dev/prime/application/views/backend/item/ver.php on line 87
+[19-Aug-2019 18:06:05 UTC] PHP Fatal error:  Call to undefined method Secao_model::lista_secaoBySessao() in /home/valltech/public_html/dev/prime/application/controllers/Item_Controller.php on line 51
+[19-Aug-2019 18:09:07 UTC] PHP Fatal error:  Call to undefined method Secao_model::lista_itensBySecao() in /home/valltech/public_html/dev/prime/application/controllers/Item_Controller.php on line 51
+[19-Aug-2019 18:09:08 UTC] PHP Fatal error:  Call to undefined method Secao_model::lista_itensBySecao() in /home/valltech/public_html/dev/prime/application/controllers/Item_Controller.php on line 51
+[21-Aug-2019 13:24:31 UTC] PHP Fatal error:  Call to undefined method Responder_model::montarFormulario() in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 29
+[23-Aug-2019 00:40:29 UTC] PHP Parse error:  syntax error, unexpected 'as' (T_AS), expecting ';' in /home/valltech/public_html/dev/prime/application/views/backend/responder/ver.php on line 39
+[23-Aug-2019 00:43:53 UTC] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/valltech/public_html/dev/prime/application/views/backend/responder/ver.php on line 46
+[23-Aug-2019 00:49:01 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/valltech/public_html/dev/prime/application/views/backend/responder/ver.php on line 44
+[23-Aug-2019 00:49:22 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/valltech/public_html/dev/prime/application/views/backend/responder/ver.php on line 44
+[23-Aug-2019 01:07:01 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/valltech/public_html/dev/prime/application/views/backend/responder/ver.php on line 73
+[24-Aug-2019 00:09:21 UTC] PHP Parse error:  syntax error, unexpected 'POST' (T_STRING), expecting ',' or ';' in /home/valltech/public_html/dev/prime/application/views/backend/responder/ver.php on line 39
+[24-Aug-2019 20:45:31 UTC] PHP Fatal error:  Call to a member function Campos() on null in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 48
+[24-Aug-2019 20:46:46 UTC] PHP Fatal error:  Call to a member function Campos() on null in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 48
+[24-Aug-2019 20:46:47 UTC] PHP Fatal error:  Call to a member function Campos() on null in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 48
+[24-Aug-2019 20:47:10 UTC] PHP Fatal error:  Call to a member function Campos() on null in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 48
+[24-Aug-2019 21:12:57 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 48
+[24-Aug-2019 21:13:35 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 56
+[24-Aug-2019 21:14:16 UTC] PHP Fatal error:  Cannot use object of type stdClass as array in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 50
+[25-Aug-2019 17:32:21 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/valltech/public_html/dev/prime/application/views/backend/responder/ver.php on line 47
+[25-Aug-2019 19:21:40 UTC] PHP Fatal error:  Call to undefined method Responder_model::verificaFormulario() in /home/valltech/public_html/dev/prime/application/controllers/Responder_Controller.php on line 21
+[01-Sep-2019 16:50:35 UTC] PHP Fatal error:  Call to undefined method Usuarios_Controller::cadastro() in /home/valltech/public_html/dev/prime/application/controllers/Usuarios_Controller.php on line 102

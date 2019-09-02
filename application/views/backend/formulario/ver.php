@@ -1,0 +1,71 @@
+<div class="content-wrapper">
+    <section class="content-header">
+        <h1>
+            Gerenciamento de <?= $subtitle; ?>
+            <small>Gerencie o(a)s <?= $subtitle; ?> de seu site</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="<?= base_url(''); ?>"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="<?= base_url('formulario'); ?>"><?= $title; ?></a></li>
+            <li class="active"><?= $subtitle; ?></li>
+        </ol>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h3 class="box-title">Visualize aqui <?= $subtitle; ?> existentes</h3>
+                        <?= mostraTagADMIN($p, '<a href="'. base_url('formulario/inserir/') .'" class="btn btn-small pull-right btn-flat btn-primary">Inserir novo formulario</a>'); ?>
+                    </div>
+                    <div class="box-body">
+                        <table id="tabelinha" class="table table-bordered table-striped">
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Formulario</th>
+                                <th style="width:120px">Opções</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <?php foreach ($formulario as $form) { ?>
+                                <tr>
+                                    <td><?= $form["form_id"]; ?></td>
+                                    <td><?= $form["form_nome"] ?></td>
+                                    <td>
+                                        <a href="<?= base_url('secao/'.$form['form_id']); ?>" class="btn btn-flat btn-default" data-toggle="tooltip" title="Ver Seções do Formulário"><i class="fa fa-eye"></i></a>
+                                        <a href="<?= base_url('formulario/editar/' . $form["form_id"]); ?>" class="btn btn-flat btn-info"  data-toggle="tooltip" title="Editar Formulário"><i class="fa fa-edit"></i></a>
+                                        <?= mostraTagADMIN($p, '<a onclick="deletar('. $form["form_id"].')" class="btn btn-flat btn-danger"  data-toggle="tooltip" title="Apagar Formulário"><i class="fa fa-trash"></i></a>') ?>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <th>#</th>
+                                <th>Formulario</th>
+                                <th style="width:100px">Opções</th>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<script>
+
+    function deletar(id) {
+
+        if (confirm("Deseja mesmo excluir?")) {
+
+            window.location.href = "<?= base_url('formulario/excluir/'); ?>" + id;
+
+        }
+
+    }
+
+
+
+</script>

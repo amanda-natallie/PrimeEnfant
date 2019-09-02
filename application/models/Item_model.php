@@ -14,6 +14,23 @@ class Item_model extends CI_Model {
         return $this->db->get()->result_array();
     }
 
+    public function lista_item($id)
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_campos_form');
+        $this->db->where('cam_id', $id );
+        $this->db->order_by('cam_id', "ASC");
+        return $this->db->get()->result_array();
+    }
+
+    public function lista_tipos()
+    {
+        $this->db->select('*');
+        $this->db->from('tbl_tipos_campo');
+        $this->db->order_by('tip_id', "ASC");
+        return $this->db->get()->result_array();
+    }
+
     public function adicionar($array) {
         $this->db->insert('tbl_campos_form', $array);
         return $this->db->insert_id();
@@ -24,9 +41,9 @@ class Item_model extends CI_Model {
         return $this->db->delete("tbl_campos_form", $dados);
     }
 
-    public function editar($array) {
+    public function editar($array,$id) {
         $this->db->set($array);
-        $this->db->where('cam_id', $array['cam_id']);
+        $this->db->where('cam_id', $id);
         $this->db->update('tbl_campos_form');
         return $this->db->affected_rows();
     }

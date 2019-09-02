@@ -9,8 +9,7 @@
                     <div class="col-md-12">
                         <?= validation_errors('<div class="alert alert-danger">', '</div>'); ?>
 
-                        <form action="<?= base_url("formulario/salvar_alteracoes"); ?>" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="form_id" value="<?= $formulario[0]["form_id"]; ?>">
+                        <form action="<?= base_url("formulario/salvar_alteracoes/".$formulario[0]["form_id"]); ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="form_nome">Nome</label>
                                 <?php if($formulario[0]["form_id"] == 3) { ?>

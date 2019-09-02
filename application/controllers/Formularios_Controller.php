@@ -45,8 +45,7 @@ class Formularios_Controller extends CI_Controller {
         }
     }
 
-    public function salvar_alteracoes() {
-        $id = $this->input->post('form_id');
+    public function salvar_alteracoes($id) {
         $this->form_validation->set_rules('form_nome', "IDENTIFICAÇÃO DO FOMRULÁRIO", array('required', 'min_length[3]'));
         if ($this->form_validation->run() == FALSE) {
             $this->editar($id);
@@ -60,7 +59,7 @@ class Formularios_Controller extends CI_Controller {
                 $urlRetorno = "formulario";
                 redirect(base_url($urlRetorno));
             } else {
-                $this->editar();
+                $this->editar($id);
             }
         }
     }

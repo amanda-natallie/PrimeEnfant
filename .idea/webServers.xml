@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="bee0d431-cc7f-4915-ad56-f9229fcead60" name="Vallori" url="http://ftp.valloritecnologia.com.br">
+        <fileTransfer host="ftp.valloritecnologia.com.br" port="21" rootFolder="/public_html/dev/prime">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

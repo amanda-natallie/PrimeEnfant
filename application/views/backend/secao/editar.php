@@ -9,9 +9,8 @@
                     <div class="col-md-12">
                         <?= validation_errors('<div class="alert alert-danger">', '</div>'); ?>
 
-                        <form action="<?= base_url("secao/salvar_alteracoes"); ?>" method="post"
+                        <form action="<?= base_url("secao/salvar_alteracoes/".$secao[0]["ses_id"]."/".$secao[0]['form_id']); ?>" method="post"
                               enctype="multipart/form-data">
-                            <input type="hidden" name="ses_id" value="<?= $secao[0]["ses_id"]; ?>">
                             <div class="form-group">
                                 <label for="form_nome">Nome</label>
                                 <?php if ($secao[0]["ses_id"] == 3) { ?>
@@ -27,7 +26,7 @@
                             <div class="box-footer">
                                 <input type="submit" name="btn_alt_df" class="btn btn-primary btn-flat"
                                        value="Alterar Informações">
-                                <a href="<?= base_url('secao/').$form; ?>" class="btn btn-danger btn-flat">Voltar para o
+                                <a href="<?= base_url('secao/').$secao[0]['form_id']; ?>" class="btn btn-danger btn-flat">Voltar para o
                                     gerenciamento de <?= $subtitle; ?></a>
                             </div>
                         </form>

@@ -49,6 +49,7 @@ class Item_Controller extends CI_Controller
                 'cam_tipo' => $this->input->post('cam_tipo'),
                 'cam_label' => $this->input->post('cam_label'),
                 'cam_validation_message' => $this->input->post('cam_validation_message'),
+                'cam_mandatory' => $this->input->post('cam_mandatory'),
                 'cam_opt1' => $this->input->post('cam_opt1'),
                 'cam_opt2' => $this->input->post('cam_opt2'),
                 'cam_opt3' => $this->input->post('cam_opt3'),
@@ -66,22 +67,29 @@ class Item_Controller extends CI_Controller
         }
     }
 
-    public function salvar_alteracoes(){
-        $id = $this->input->post('form_id');
-        $this->form_validation->set_rules('form_nome', "IDENTIFICAÇÃO DO FOMRULÁRIO", array('required', 'min_length[3]'));
+    public function salvar_alteracoes($id,$form){
+        $this->form_validation->set_rules('cam_tipo', "Tipo obrigatório", array('required'));
+        $this->form_validation->set_rules('cam_label', "Label do campo", array('required', 'min_length[3]'));
+        $this->form_validation->set_rules('cam_validation_message', "mensagem de validação do campo", array('required', 'min_length[3]'));
         if ($this->form_validation->run() == FALSE) {
-            $this->editar($id);
+            $this->editar($id,$form);
         } else {
             $arr_item = [
-                'form_id' => $id,
-                'form_nome' => $this->input->post('form_nome')
+                'cam_tipo' => $this->input->post('cam_tipo'),
+                'cam_label' => $this->input->post('cam_label'),
+                'cam_validation_message' => $this->input->post('cam_validation_message'),
+                'cam_mandatory' => $this->input->post('cam_mandatory') == 'on' ? 1 : 0,
+                'cam_opt1' => $this->input->post('cam_opt1'),
+                'cam_opt2' => $this->input->post('cam_opt2'),
+                'cam_opt3' => $this->input->post('cam_opt3'),
+                'cam_opt4' => $this->input->post('cam_opt4')
             ];
-            $retornoCad = $this->mitem->editar($arr_item);
+            $retornoCad = $this->mitem->editar($arr_item,$id);
             if ($retornoCad) {
-                $urlRetorno = "campo";
+                $urlRetorno = "campo/".$form;
                 redirect(base_url($urlRetorno));
             } else {
-                $this->editar();
+                $this->editar($id,$form);
             }
         }
     }

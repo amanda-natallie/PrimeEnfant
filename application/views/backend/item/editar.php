@@ -11,7 +11,7 @@
                     <div class="col-md-12">
                         <?= validation_errors('<div class="alert alert-danger">', '</div>'); ?>
 
-                        <form action="<?= base_url(); ?>campo/salvar_alteracoes" method="post" enctype="multipart/form-data">
+                        <form action="<?= base_url("campo/salvar_alteracoes/".$item[0]['cam_id']."/".$form); ?>" method="post" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label for="cam_tipo">Tipo do campo</label>
                                 <select class="form-control" name="cam_tipo" id="cam_tipo">
@@ -68,7 +68,7 @@
                             <div class="box-footer">
                                 <input type="submit" name="btn_alt_df" class="btn btn-primary btn-flat"
                                        value="Cadastrar">
-                                <a href="<?= base_url("item/".$form) ?>" class="btn btn-danger btn-flat">Voltar para o
+                                <a href="<?= base_url("campo/".$form) ?>" class="btn btn-danger btn-flat">Voltar para o
                                     gerenciamento de <?= $subtitle; ?></a>
                             </div>
                         </form>

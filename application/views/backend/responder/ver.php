@@ -18,12 +18,6 @@
                     <div class="collapse" id="collapseExample" style="max-width: 100%">
                         <div class="card card-body">
                             <ul class="list-unstyled">
-                                
-                                <?php  
-                                    foreach ($secoes as $s){
-                                        echo '<li><a href="'.base_url('campo/'.$s["ses_id"]).'">'.$s["ses_nome"].'</a></li>';
-                                    }
-                                ?>
                             </ul>
                         </div>
                     </div>

@@ -14,6 +14,16 @@ class Item_model extends CI_Model {
         return $this->db->get()->result_array();
     }
 
+
+    public function getTipoCampo($id)
+    {     $this->db->select('cam_tipo');
+        $this->db->from('tbl_campos_form');
+        $this->db->where('cam_id', $id );
+        $this->db->order_by('cam_id', "ASC");
+        return $this->db->get()->result_array();
+
+    }
+
     public function lista_item($id)
     {
         $this->db->select('*');

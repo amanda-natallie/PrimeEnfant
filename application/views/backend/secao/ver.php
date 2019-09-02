@@ -36,7 +36,7 @@
 
                                             <a href="<?= base_url('secao/editar/' . $sec["ses_id"]); ?>"
                                                class="btn btn-flat btn-info"  data-toggle="tooltip" title="Editar Seção"><i class="fa fa-edit"></i></a>
-                                               <?= mostraTagADMIN($p, '<a onclick="deletar(' . $sec["ses_id"]. ')" class="btn btn-flat btn-danger"  data-toggle="tooltip" title="Excluir Seção"><i class="fa fa-trash"></i></a>') ?>
+                                               <?= mostraTagADMIN($p, '<a onclick="deletar(' . $sec["ses_id"]. ','.$form['form_id'].')" class="btn btn-flat btn-danger"  data-toggle="tooltip" title="Excluir Seção"><i class="fa fa-trash"></i></a>') ?>
                                         </td>
                                     </tr>
                                 <?php } ?>

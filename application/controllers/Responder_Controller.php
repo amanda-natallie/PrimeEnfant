@@ -37,6 +37,8 @@ class Responder_Controller extends CI_Controller
         $dados['title'] = "Gerenciar respostas";
         $dados['subtitle'] = " responstas do formularios";
 
+        print_r($this->formulario);
+        die;       
         render_template("responder/ver", $dados);
     }
 

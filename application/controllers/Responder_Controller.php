@@ -33,23 +33,29 @@ class Responder_Controller extends CI_Controller
         $this->formulario = $this->mresp->montarFormulario($id, $this->session->userdata('userlogado')->user_id);
 
         $secoes = [];
+
         $opcoes = [];
 
         foreach ($this->formulario as $form) {
 
             array_push($secoes, $form['ses_nome']);
-            if($opcao = $this->mresp->montarOpcoes($form['cam_id'])){
+            if ($opcao = $this->mresp->montarOpcoes($form['cam_id'])) {
                 $opcoes[$form['cam_id']] = $opcao;
             }
-
         }
 
         $dados['p'] = $this->session->userdata('userlogado')->user_permissao;
+
         $dados['param'] = $id;
+
         $dados['formularioMontado'] = $this->formulario;
+
         $dados['secoes'] = $secoes;
+
         $dados['opcoes'] = $opcoes;
+
         $dados['title'] = "Gerenciar respostas";
+
         $dados['subtitle'] = " responstas do formularios";
 
         render_template("responder/ver", $dados);
@@ -58,20 +64,37 @@ class Responder_Controller extends CI_Controller
     public function cadastrar($id)
     {
         $cliente = $this->session->userdata('userlogado');
-        $Campos = $this->mresp->Campos($this->input->post('form_id'));
+
+        $Campos = $this->mresp->Campos($id);
+
+        $success = false;
+
         for ($i = 0; $i < sizeof($Campos); $i++) {
-            $arr_formulario = [
-                'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
-                'res_campo' => $Campos[$i]['cam_id'],
-                'res_cliente' => $cliente->user_id
-            ];
-            $retornoCad = $this->mresp->adicionar($arr_formulario);
+            if ($Campos[$i]['cam_mandatory']) {
+                $this->form_validation->set_rules($Campos[$i]['cam_name'], $Campos[$i]['cam_validation_message'], 'required');
+                if ($this->form_validation->run() == FALSE) {
+                    break;
+                }
+            } else {
+                $arr_formulario = [
+                    'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
+                    'res_campo' => $Campos[$i]['cam_id'],
+                    'res_cliente' => $cliente->user_id
+                ];
+
+                $this->mresp->adicionar($arr_formulario) ? $success = true : $success = false;
+            }
+
         }
-        if ($retornoCad) {
+        if ($success) {
+
             $urlRetorno = "responder/";
+
             redirect(base_url($urlRetorno));
         } else {
-            $this->montarFormulario($this->input->post('form_id'));
+
+            $this->montarFormulario($id);
+
         }
     }
 }

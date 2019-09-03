@@ -44,7 +44,7 @@ class Responder_model extends CI_Model
 
     public function Campos($form_id)
     {
-        $this->db->select('c.cam_id, c.cam_name');
+        $this->db->select('c.cam_id, c.cam_name, c.cam_validation_message, c.cam_mandatory');
         $this->db->from('tbl_forms as t');
         $this->db->join('tbl_sessao_form as s', 'form_id = ses_id_form', 'left');
         $this->db->join('tbl_campos_form as c', 'ses_id = cam_sessao_form', 'left');

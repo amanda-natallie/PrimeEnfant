@@ -48,6 +48,7 @@ class Item_Controller extends CI_Controller
                 'cam_sessao_form' => $this->input->post('cam_sessao_form'),
                 'cam_tipo' => $this->input->post('cam_tipo'),
                 'cam_label' => $this->input->post('cam_label'),
+                'cam_name' => $this->input->post('cam_name'),
                 'cam_validation_message' => $this->input->post('cam_validation_message'),
                 'cam_mandatory' => $this->input->post('cam_mandatory'),
                 'cam_opt1' => $this->input->post('cam_opt1'),
@@ -77,6 +78,7 @@ class Item_Controller extends CI_Controller
             $arr_item = [
                 'cam_tipo' => $this->input->post('cam_tipo'),
                 'cam_label' => $this->input->post('cam_label'),
+                'cam_name' => $this->input->post('cam_name'),
                 'cam_validation_message' => $this->input->post('cam_validation_message'),
                 'cam_mandatory' => $this->input->post('cam_mandatory') == 'on' ? 1 : 0,
                 'cam_opt1' => $this->input->post('cam_opt1'),

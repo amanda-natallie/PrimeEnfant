@@ -46,10 +46,10 @@ class Field_Controller extends CI_Controller
                 'opc_campo' => $id,
                 'opc_tipo' => $this->campo[0]['cam_tipo']
             ];
-            $retornoCad = $this->mfield->editar($arr_campos);
+            $retornoCad = $this->mfield->adicionar($arr_campos);
 
             if ($retornoCad) {
-                $urlRetorno = "field/inserir/".$id;
+                $urlRetorno = "field/".$id;
                 redirect(base_url($urlRetorno));
             } else {
                 $this->inserir($id);

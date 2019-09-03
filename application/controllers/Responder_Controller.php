@@ -31,18 +31,31 @@ class Responder_Controller extends CI_Controller
     public function montarFormulario($id)
     {
         $this->formulario = $this->mresp->montarFormulario($id, $this->session->userdata('userlogado')->user_id);
+
+        $secoes = [];
+        $opcoes = [];
+
+        foreach ($this->formulario as $form) {
+
+            array_push($secoes, $form['ses_nome']);
+            if($opcao = $this->mresp->montarOpcoes($form['cam_id'])){
+                $opcoes[$form['cam_id']] = $opcao;
+            }
+
+        }
+
         $dados['p'] = $this->session->userdata('userlogado')->user_permissao;
         $dados['param'] = $id;
         $dados['formularioMontado'] = $this->formulario;
+        $dados['secoes'] = $secoes;
+        $dados['opcoes'] = $opcoes;
         $dados['title'] = "Gerenciar respostas";
         $dados['subtitle'] = " responstas do formularios";
 
-        print_r($this->formulario);
-        die;       
         render_template("responder/ver", $dados);
     }
 
-    public function cadastrar()
+    public function cadastrar($id)
     {
         $cliente = $this->session->userdata('userlogado');
         $Campos = $this->mresp->Campos($this->input->post('form_id'));

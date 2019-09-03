@@ -23,12 +23,21 @@ class Responder_model extends CI_Model
 
     public function montarFormulario($id, $cliente)
     {
-        $this->db->select('t.* , s.*, c.* , tc.*, (SELECT COUNT(res_id) FROM tbl_respostas WHERE res_campo = cam_id AND res_cliente = '.$cliente.' ) as valida');
+        $this->db->select('t.* , s.*, c.*, f.* , tc.*, (SELECT COUNT(res_id) FROM tbl_respostas WHERE res_campo = cam_id AND res_cliente = ' . $cliente . ' ) as valida');
         $this->db->from('tbl_forms as t');
         $this->db->join('tbl_sessao_form as s', 'form_id = ses_id_form', 'left');
         $this->db->join('tbl_campos_form as c', 'ses_id = cam_sessao_form', 'left');
         $this->db->join('tbl_tipos_campo as tc', 'tip_id = cam_tipo', 'left');
+        $this->db->join('tbl_fieldOptions as f', 'opc_id = cam_id', 'left');
         $this->db->where('form_id', $id);
+        return $this->db->get()->result_array();
+    }
+
+    public function montarOpcoes($id)
+    {
+        $this->db->select('t.*');
+        $this->db->from('tbl_fieldOptions as t');
+        $this->db->where('opc_campo', $id);
         return $this->db->get()->result_array();
     }
 

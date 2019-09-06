@@ -67,30 +67,64 @@ class Responder_Controller extends CI_Controller
 
         $Campos = $this->mresp->Campos($id);
 
+        $arr_formulario = [];
+
         $success = false;
+
+
 
         for ($i = 0; $i < sizeof($Campos); $i++) {
             if ($Campos[$i]['cam_mandatory']) {
                 $this->form_validation->set_rules($Campos[$i]['cam_name'], $Campos[$i]['cam_validation_message'], 'required');
                 if ($this->form_validation->run() == FALSE) {
+                    $success = false;
                     break;
                 }
-            } else {
-                $arr_formulario = [
+                else {
+
+                    $resposta = [
+                        'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
+                        'res_campo' => $Campos[$i]['cam_id'],
+                        'res_cliente' => $cliente->user_id
+                    ];
+                    array_push($arr_formulario, $resposta);
+
+                    $success = true;
+                }
+            }
+            else {
+
+                $resposta = [
                     'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
                     'res_campo' => $Campos[$i]['cam_id'],
                     'res_cliente' => $cliente->user_id
                 ];
+                array_push($arr_formulario, $resposta);
 
-                $this->mresp->adicionar($arr_formulario) ? $success = true : $success = false;
+                $success = true;
             }
 
         }
         if ($success) {
 
-            $urlRetorno = "responder/";
+            foreach ($arr_formulario as $arr_formulario) {
 
-            redirect(base_url($urlRetorno));
+                $retorno = $this->mresp->adicionar($arr_formulario);
+
+            }
+
+            if($retorno) {
+
+                $urlRetorno = "responder/";
+
+                redirect(base_url($urlRetorno));
+
+            }
+            else{
+
+                $this->montarFormulario($id);
+
+            }
         } else {
 
             $this->montarFormulario($id);

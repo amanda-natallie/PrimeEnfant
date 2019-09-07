@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="35904bc7-5a24-4b0f-bd3d-861b13c0b088" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/controllers/Ocorrencias_Controller.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/models/Ocorrencias_model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/backend/ocorrencia/cadastrar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/backend/ocorrencia/editar.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/backend/ocorrencia/ver.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/backend/ocorrencia/visualizar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/config/routes.php" afterPath="$PROJECT_DIR$/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/Responder_Controller.php" afterPath="$PROJECT_DIR$/application/controllers/Responder_Controller.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/backend/responder/ver.php" afterPath="$PROJECT_DIR$/application/views/backend/responder/ver.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/backend/template/template.php" afterPath="$PROJECT_DIR$/application/views/backend/template/template.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,8 +17,18 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/config/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="46" column="80" lean-forward="false" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
+            <state relative-caret-position="300">
+              <caret line="50" column="3" lean-forward="false" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="template.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/backend/template/template.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="57" column="80" lean-forward="false" selection-start-line="57" selection-start-column="80" selection-end-line="57" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -62,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ver.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ver.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/backend/ocorrencia/ver.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="977">
@@ -96,6 +97,7 @@
       <find>$form</find>
       <find>f</find>
       <find>`</find>
+      <find>solicitacoes</find>
     </findStrings>
     <replaceStrings>
       <replace>$formularioMontado[$i]</replace>
@@ -123,7 +125,6 @@
         <option value="$PROJECT_DIR$/application/views/backend/field/ver.php" />
         <option value="$PROJECT_DIR$/application/controllers/Item_Controller.php" />
         <option value="$PROJECT_DIR$/application/models/Responder_model.php" />
-        <option value="$PROJECT_DIR$/application/views/backend/template/template.php" />
         <option value="$PROJECT_DIR$/application/controllers/Responder_Controller.php" />
         <option value="$PROJECT_DIR$/application/views/backend/ocorrencia/visualizar.php" />
         <option value="$PROJECT_DIR$/application/views/backend/responder/ver.php" />
@@ -132,6 +133,7 @@
         <option value="$PROJECT_DIR$/application/controllers/Ocorrencias_Controller.php" />
         <option value="$PROJECT_DIR$/application/models/Ocorrencias_model.php" />
         <option value="$PROJECT_DIR$/application/views/backend/ocorrencia/ver.php" />
+        <option value="$PROJECT_DIR$/application/views/backend/template/template.php" />
       </list>
     </option>
   </component>
@@ -218,23 +220,15 @@
               <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="item" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="prime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prime" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="ocorrencia" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="prime" type="b2602c69:ProjectViewProjectNode" />
-              <item name="prime" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="responder" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="prime" type="b2602c69:ProjectViewProjectNode" />
+              <item name="prime" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="application" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="backend" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="template" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -284,12 +278,12 @@
       <workItem from="1567423186747" duration="3581000" />
       <workItem from="1567448959664" duration="6354000" />
       <workItem from="1567649592313" duration="517000" />
-      <workItem from="1567802976971" duration="16952000" />
+      <workItem from="1567802976971" duration="17391000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49671000" />
+    <option name="totallyTimeSpent" value="50110000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -631,14 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/backend/template/template.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="61" column="114" lean-forward="false" selection-start-line="61" selection-start-column="114" selection-end-line="61" selection-end-column="114" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Item_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -700,14 +686,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="46" column="80" lean-forward="false" selection-start-line="46" selection-start-column="80" selection-end-line="46" selection-end-column="80" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/backend/ocorrencia/visualizar.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2">
@@ -753,6 +731,22 @@
             <marker date="1567868095982" expanded="true" signature="3841:3950" ph="{...}" />
             <marker date="1567868095982" expanded="true" signature="3894:3950" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/config/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="50" column="3" lean-forward="false" selection-start-line="50" selection-start-column="3" selection-end-line="50" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/backend/template/template.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="57" column="80" lean-forward="false" selection-start-line="57" selection-start-column="80" selection-end-line="57" selection-end-column="80" />
+          <folding />
         </state>
       </provider>
     </entry>

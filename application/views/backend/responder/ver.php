@@ -65,7 +65,6 @@
                                                     ?>
                                                 </select>
 
-
                                             <?php }
                                             if ($formularioMontado[$i]['tip_codigo'] == 'radio' || $formularioMontado[$i]['tip_codigo'] == 'checkbox') { ?>
                                                 <div class="form-group">

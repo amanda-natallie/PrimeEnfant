@@ -13,53 +13,24 @@ class Responder_Controller extends CI_Controller
         }
         $this->load->model("responder_model", "mresp");
         $this->load->model("formularios_model", "mform");
+        $this->load->model("ocorrencias_model", "moco");
     }
 
     public function index()
     {
+
         $cliente = $this->session->userdata('userlogado');
-        $this->formulario = $this->mresp->lista_formularios();
+        $this->formulario = $this->moco->lista_formularios();
         $dados['p'] = $this->session->userdata('userlogado')->user_permissao;
         $dados['param'] = NULL;
         $dados['formulario'] = $this->formulario;
         $dados['title'] = "Gerenciar respostas";
         $dados['subtitle'] = " responstas do formularios";
 
-        render_template("responder/ver", $dados);
+        render_template("ocorrencia/ver", $dados);
+
     }
 
-    public function montarFormulario($id)
-    {
-        $this->formulario = $this->mresp->montarFormulario($id, $this->session->userdata('userlogado')->user_id);
-
-        $secoes = [];
-
-        $opcoes = [];
-
-        foreach ($this->formulario as $form) {
-
-            array_push($secoes, $form['ses_nome']);
-            if ($opcao = $this->mresp->montarOpcoes($form['cam_id'])) {
-                $opcoes[$form['cam_id']] = $opcao;
-            }
-        }
-
-        $dados['p'] = $this->session->userdata('userlogado')->user_permissao;
-
-        $dados['param'] = $id;
-
-        $dados['formularioMontado'] = $this->formulario;
-
-        $dados['secoes'] = $secoes;
-
-        $dados['opcoes'] = $opcoes;
-
-        $dados['title'] = "Gerenciar respostas";
-
-        $dados['subtitle'] = " responstas do formularios";
-
-        render_template("responder/ver", $dados);
-    }
 
     public function cadastrar($id)
     {
@@ -69,9 +40,13 @@ class Responder_Controller extends CI_Controller
 
         $arr_formulario = [];
 
+        $ocorrencias = [
+            "oco_cliente" => $cliente->user_id,
+            "oco_formulario" => $id,
+            "oco_status" => 0,
+        ];
+
         $success = false;
-
-
 
         for ($i = 0; $i < sizeof($Campos); $i++) {
             if ($Campos[$i]['cam_mandatory']) {
@@ -79,8 +54,7 @@ class Responder_Controller extends CI_Controller
                 if ($this->form_validation->run() == FALSE) {
                     $success = false;
                     break;
-                }
-                else {
+                } else {
 
                     $resposta = [
                         'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
@@ -91,8 +65,7 @@ class Responder_Controller extends CI_Controller
 
                     $success = true;
                 }
-            }
-            else {
+            } else {
 
                 $resposta = [
                     'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
@@ -113,14 +86,15 @@ class Responder_Controller extends CI_Controller
 
             }
 
-            if($retorno) {
+            if ($retorno) {
+
+                $this->moco->adicionar($ocorrencias);
 
                 $urlRetorno = "responder/";
 
                 redirect(base_url($urlRetorno));
 
-            }
-            else{
+            } else {
 
                 $this->montarFormulario($id);
 

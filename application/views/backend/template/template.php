@@ -59,6 +59,7 @@
                         <li><a href="<?= base_url(); ?>cadastro"><i class="fa fa-copy"></i> <span>Gerenciar Cadastro</span></a></li>
                         <li><a href="<?= base_url('formulario');?>"><i class="fa fa-list"></i> <span>Gerenciar Formulário</span> </a> </li>
                         <li><a href="<?= base_url('responder');?>"><i class="fa fa-list"></i> <span>Responder Formulário</span> </a> </li>
+                        <li><a href="<?= base_url('ocorrencia');?>"><i class="fa fa-list"></i> <span>Ver Respostas</span> </a> </li>
                     </ul>
                 </section>
             </aside>

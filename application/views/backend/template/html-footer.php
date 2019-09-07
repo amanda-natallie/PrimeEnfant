@@ -15,6 +15,7 @@
 <script src="<?= base_url("assets/backend/components/bootstrap-fileupload/bootstrap-fileupload.min.js") ?>"></script>
 <script src="<?= base_url("assets/backend/components/dropzone/dropzone.min.js") ?>"></script>
 <script src="<?= base_url("assets/backend/components/dropzone/form-dropzone.min.js") ?>"></script>
+<script src="<?= base_url("assets/backend/components/remodal/dist/remodal.min.js") ?>"></script>
 <script src="<?= base_url("assets/backend/js/adminlte.min.js") ?>"></script>
 <script src="<?= base_url("assets/backend/js/demo.js") ?>"></script>
 <script>

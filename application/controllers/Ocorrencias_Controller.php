@@ -18,8 +18,8 @@ class Ocorrencias_Controller extends CI_Controller
         $dados['p'] = $this->session->userdata('userlogado')->user_permissao;
         $dados['p'] = 1 ? $this->ocorrencias = $this->moco->lista_ocorrencias() : $this->ocorrencias->moco->lista_ocorrenciasByUser($this->session->userdata('userlogado')->user_id);
         $dados['ocorrencias'] = $this->ocorrencias;
-        $dados['title'] = "Gerenciar Ocorrencias";
-        $dados['subtitle'] = " Ocorrencias do site";
+        $dados['title'] = "Gerenciar Solicitações";
+        $dados['subtitle'] = " Solicitações de cadastro";
 
         render_template("ocorrencia/ver", $dados);
     }
@@ -145,7 +145,7 @@ class Ocorrencias_Controller extends CI_Controller
         $dados['opcoes'] = $this->moco->buscaOpcoes($dados['resposta'][0]['cam_id']);
         $dados['id'] = $id;
         $dados['title'] = "Admin";
-        $dados['subtitle'] = " Ocorrencias";
+        $dados['subtitle'] = " Solicitações";
         $this->load->view('backend/template/html-header', $dados);
         $this->load->view('backend/template/template');
         $this->load->view('backend/ocorrencia/editar');

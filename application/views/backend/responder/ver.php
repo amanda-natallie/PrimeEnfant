@@ -13,14 +13,13 @@
                         <?php
                         if (!$param) {
                             ?>
-                            <select name="form" id="form" class="form-control" onchange="montaFormulario()">
-                                <option value="0">Selecione um formulário</option>
+                            <div class="form-group">
                                 <?php
                                 foreach ($formulario as $form) {
-                                    echo "<option value='" . $form['form_id'] . "'>" . $form['form_nome'] . "</option>";
+                                    echo "<input type='radio' name='form' id='form' value='" . $form['form_id'] . "' onclick='montaFormulario(" . $form['form_id'] . ");'>" . $form['form_nome'] . "<br />";
                                 }
                                 ?>
-                            </select>
+                            </div>
                         <?php } else {
                             ?>
                             <?= validation_errors('<div class="alert alert-danger">', '</div>'); ?>
@@ -28,7 +27,9 @@
                               enctype="multipart/form-data">
                             <?php
                             $repete = NULL;
-                            foreach ($secoes as $secao) {
+                            foreach ($secoes
+
+                                     as $secao) {
                                 if ($repete != $secao) { ?>
                                     <h4><?= $secao; ?></h4>
 
@@ -40,9 +41,7 @@
                                             <label for="<?= $formularioMontado[$i]['cam_name']; ?>"><?= $formularioMontado[$i]['cam_label']; ?></label>
                                             <?php
 
-                                            if ($formularioMontado[$i]['tip_codigo'] == 'text' || $formularioMontado[$i]['tip_codigo'] == 'date' || $formularioMontado[$i]['tip_codigo'] == 'email' ||
-                                                $formularioMontado[$i]['tip_codigo'] == 'tel' || $formularioMontado[$i]['tip_codigo'] == 'number') {
-                                                ?>
+                                            if ($formularioMontado[$i]['tip_codigo'] == 'text') {?>
 
 
                                                 <input class="form-control"
@@ -52,6 +51,38 @@
 
 
                                             <?php }
+                                            if ($formularioMontado[$i]['tip_codigo'] == 'date') { ?>
+
+                                                <input class="form-control"
+                                                       type="<?= $formularioMontado[$i]['tip_codigo']; ?>"
+                                                       name="<?= $formularioMontado[$i]['cam_name']; ?>"
+                                                       id="<?= $formularioMontado[$i]['cam_name']; ?>" <?= $formularioMontado[$i]['cam_mandatory'] == true ? 'required' : NULL; ?> <?= $formularioMontado[$i]['tip_nome'] == 'CPF' ? 'mascara' : NULL; ?> />
+
+                                            <?php }
+                                            if ($formularioMontado[$i]['tip_codigo'] == 'email') { ?>
+
+                                                <input class="form-control"
+                                                       type="<?= $formularioMontado[$i]['tip_codigo']; ?>"
+                                                       name="<?= $formularioMontado[$i]['cam_name']; ?>"
+                                                       id="<?= $formularioMontado[$i]['cam_name']; ?>" <?= $formularioMontado[$i]['cam_mandatory'] == true ? 'required' : NULL; ?> <?= $formularioMontado[$i]['tip_nome'] == 'CPF' ? 'mascara' : NULL; ?> />
+
+                                            <?php }
+                                            if ($formularioMontado[$i]['tip_codigo'] == 'tel') { ?>
+                                                <input class="form-control"
+                                                       type="<?= $formularioMontado[$i]['tip_codigo']; ?>"
+                                                       name="<?= $formularioMontado[$i]['cam_name']; ?>"
+                                                       id="<?= $formularioMontado[$i]['cam_name']; ?>" <?= $formularioMontado[$i]['cam_mandatory'] == true ? 'required' : NULL; ?> <?= $formularioMontado[$i]['tip_nome'] == 'CPF' ? 'mascara' : NULL; ?> />
+
+
+                                            <?php }
+                                            if ($formularioMontado[$i]['tip_codigo'] == 'number') { ?>
+                                                <input class="form-control"
+                                                       type="<?= $formularioMontado[$i]['tip_codigo']; ?>"
+                                                       name="<?= $formularioMontado[$i]['cam_name']; ?>"
+                                                       id="<?= $formularioMontado[$i]['cam_name']; ?>" <?= $formularioMontado[$i]['cam_mandatory'] == true ? 'required' : NULL; ?> <?= $formularioMontado[$i]['tip_nome'] == 'CPF' ? 'mascara' : NULL; ?> />
+
+                                            <?php
+                                            }
                                             if ($formularioMontado[$i]['tip_codigo'] == 'select') { ?>
 
                                                 <select class="form-control"
@@ -69,8 +100,8 @@
                                             if ($formularioMontado[$i]['tip_codigo'] == 'radio' || $formularioMontado[$i]['tip_codigo'] == 'checkbox') { ?>
                                                 <div class="form-group">
                                                     <?php
-                                                    foreach($opcoes[$formularioMontado[$i]['cam_id']] as $op){
-                                                        echo "<input type='".$formularioMontado[$i]['tip_codigo']."' name='".$formularioMontado[$i]['cam_name']."' id='".$formularioMontado[$i]['cam_name']."' value='".$op['opc_value']."'>".$op['opc_label'];
+                                                    foreach ($opcoes[$formularioMontado[$i]['cam_id']] as $op) {
+                                                        echo "<input type='" . $formularioMontado[$i]['tip_codigo'] . "' name='" . $formularioMontado[$i]['cam_name'] . "' id='" . $formularioMontado[$i]['cam_name'] . "' value='" . $op['opc_value'] . "'>" . $op['opc_label'];
                                                     }
                                                     ?>
                                                 </div>
@@ -80,17 +111,19 @@
                                 }
                                 $repete = $secao;
                             } ?>
-                            <input class="btn btn-primary" type="submit" name="btn_enviar" id="btn_enviar" value="Enviar"/>
+                            <input class="btn btn-primary" type="submit" name="btn_enviar" id="btn_enviar"
+                                   value="Enviar"/>
                             </form><?php } ?>
                     </div>
                 </div>
             </div>
         </div>
 </div>
-<script>
-    function montaFormulario() {
-        var e = document.getElementById("form");
-        var itemSelecionado = e.options[e.selectedIndex].value;
-        window.location.assign('responder/' + itemSelecionado);
+<script type="text/javascript">
+
+
+    function montaFormulario(id) {
+
+        window.location.assign('responder/' + id);
     }
 </script>

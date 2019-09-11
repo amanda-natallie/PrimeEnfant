@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="<?= base_url("assets/backend/components/font-awesome/css/font-awesome.min.css")?>">
         <link rel="stylesheet" href="<?= base_url("assets/backend/components/Ionicons/css/ionicons.min.css")?>">
         <link rel="stylesheet" href="<?= base_url("assets/backend/css/AdminLTE.min.css")?>">
+        <link rel="stylesheet" href="<?= base_url("assets/backend/css/style.css")?>">
         <link rel="stylesheet" href="<?= base_url("assets/backend/css/skins/_all-skins.min.css")?>">
         <link rel="stylesheet" href="<?= base_url("assets/backend/components/datatables.net-bs/css/dataTables.bootstrap.min.css")?>">
         <link rel="stylesheet" href="<?= base_url("assets/backend/components/select2/dist/css/select2.min.css")?>">

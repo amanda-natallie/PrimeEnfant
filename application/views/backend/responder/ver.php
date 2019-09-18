@@ -36,11 +36,15 @@
                                     <?php
 
                                     for ($i = 0; $i < sizeof($formularioMontado); $i++) {
+                                        if($formularioMontado[$i]['valida'] >= 2){
+                                            $formularioMontado[$i]['valida'] = 0;
+                                            echo "<script> window.alert('Você excedeu as respostas deste formulário!'); window.history.back();</script>";
+                                            break;
+                                        }
                                         ?>
                                         <div class="form-group">
                                             <label for="<?= $formularioMontado[$i]['cam_name']; ?>"><?= $formularioMontado[$i]['cam_label']; ?></label>
                                             <?php
-
                                             if ($formularioMontado[$i]['tip_codigo'] == 'text') {?>
 
 

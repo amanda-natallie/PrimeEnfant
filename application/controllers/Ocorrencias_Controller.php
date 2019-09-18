@@ -140,8 +140,6 @@ class Ocorrencias_Controller extends CI_Controller
     public function editar($id)
     {
         $dados['resposta'] = $this->moco->buscaResposta($id);
-        print_r($dados['resposta']);
-        die;
         $dados['opcoes'] = $this->moco->buscaOpcoes($dados['resposta'][0]['cam_id']);
         $dados['id'] = $id;
         $dados['title'] = "Admin";

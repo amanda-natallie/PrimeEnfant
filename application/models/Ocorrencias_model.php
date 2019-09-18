@@ -67,7 +67,7 @@ class Ocorrencias_model extends CI_Model {
     }
 
     public function adicionar($array) {
-        $this->db->insert('tbl_respostas', $array);
+        $this->db->insert('tbl_ocorrencias', $array);
         return $this->db->insert_id();
     }
 

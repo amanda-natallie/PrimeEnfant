@@ -105,7 +105,19 @@ class Usuarios_Controller extends CI_Controller {
             $email = $this->input->post('user_email');
             $telefone = $this->input->post('user_telefone');
             $senha = $this->input->post('user_senha');
-            if ($origem == 1) { $permissao = $this->input->post('user_permissao');}else{$permissao = 3; }
+            if ($origem == 1) { $permissao = $this->input->post('user_permissao');}else{$permissao = 3;
+                $this->load->library('email');
+                $this->email->from('your@example.com', 'Your Name');
+                $this->email->to('someone@example.com');
+                $this->email->cc('another@another-example.com');
+                $this->email->bcc('them@their-example.com');
+
+                $this->email->subject('Email Test');
+                $this->email->message('Testing the email class.');
+
+                $this->email->send();
+
+            }
             if ($this->Muser->adicionar($nome, $telefone, $email, $senha, $permissao)) {
                 if ($origem == 1) {redirect(base_url("usuarios"));} else {
                     $this->session->set_flashdata('cadastrado_com_sucesso', 'Cadastro realizado com sucesso. <a href="'. base_url().'">Clique aqui e faça login para continuar</a>".');

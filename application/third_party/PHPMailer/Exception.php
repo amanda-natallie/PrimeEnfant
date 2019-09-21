@@ -5,7 +5,7 @@
  *
  * @see       https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  *
- * @author    Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+ * @author    Marcus Bointon (Synchro/coolbru) <PHPMailer@synchromedia.co.uk>
  * @author    Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author    Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author    Brent R. Matzelle (original founder)
@@ -23,7 +23,7 @@ namespace PHPMailer\PHPMailer;
 /**
  * PHPMailer exception handler.
  *
- * @author  Marcus Bointon <phpmailer@synchromedia.co.uk>
+ * @author  Marcus Bointon <PHPMailer@synchromedia.co.uk>
  */
 class Exception extends \Exception
 {

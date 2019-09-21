@@ -5,7 +5,7 @@
  *
  * @see       https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  *
- * @author    Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+ * @author    Marcus Bointon (Synchro/coolbru) <PHPMailer@synchromedia.co.uk>
  * @author    Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author    Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author    Brent R. Matzelle (original founder)
@@ -23,7 +23,7 @@ namespace PHPMailer\PHPMailer;
 /**
  * PHPMailer - PHP email creation and transport class.
  *
- * @author  Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+ * @author  Marcus Bointon (Synchro/coolbru) <PHPMailer@synchromedia.co.uk>
  * @author  Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author  Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author  Brent R. Matzelle (original founder)
@@ -89,14 +89,14 @@ class PHPMailer
      *
      * @var string
      */
-    public $From = 'root@localhost';
+    public $From = 'naoresponda@valloritecnologia.com.br';
 
     /**
      * The From name of the message.
      *
      * @var string
      */
-    public $FromName = 'Root User';
+    public $FromName = 'Vallori Tecnologia';
 
     /**
      * The envelope sender of the message.
@@ -2074,7 +2074,7 @@ class PHPMailer
             $langcode = 'en';
         }
         $foundlang = true;
-        $lang_file = $lang_path . 'phpmailer.lang-' . $langcode . '.php';
+        $lang_file = $lang_path . 'PHPMailer.lang-' . $langcode . '.php';
         // There is no English translation file
         if ('en' != $langcode) {
             // Make sure language file path is readable
@@ -3883,7 +3883,7 @@ class PHPMailer
                     }
                     //Hash the decoded data, not the URL so that the same data-URI image used in multiple places
                     //will only be embedded once, even if it used a different encoding
-                    $cid = hash('sha256', $data) . '@phpmailer.0'; // RFC2392 S 2
+                    $cid = hash('sha256', $data) . '@PHPMailer.0'; // RFC2392 S 2
 
                     if (!$this->cidExists($cid)) {
                         $this->addStringEmbeddedImage($data, $cid, 'embed' . $imgindex, static::ENCODING_BASE64, $match[1]);
@@ -3909,7 +3909,7 @@ class PHPMailer
                     if ('.' == $directory) {
                         $directory = '';
                     }
-                    $cid = hash('sha256', $url) . '@phpmailer.0'; // RFC2392 S 2
+                    $cid = hash('sha256', $url) . '@PHPMailer.0'; // RFC2392 S 2
                     if (strlen($basedir) > 1 and '/' != substr($basedir, -1)) {
                         $basedir .= '/';
                     }

@@ -9,32 +9,46 @@ class Usuarios_Controller extends CI_Controller
         parent::__construct();
 
         $this->load->model('usuarios_model', 'Muser');
-        $this->load->library('mail');
+        $this->mail = $this->load->library('Email');
         $this->usuarios = $this->Muser->lista_usuarios();
     }
 
     public function index()
     {
         if (verificaPermissao($this->session->userdata('logado'), $this->session->userdata('userlogado')->user_permissao, 2) == 0) {
+
             exit;
-        } else {
+
+        }
+
+        else {
+
             $dados['usuarios'] = $this->usuarios;
+
             $dados['title'] = "PrimeEnfant";
+
             $dados['subtitle'] = "Usuário";
 
             $this->load->view('backend/template/html-header', $dados);
+
             $this->load->view('backend/template/template');
+
             $this->load->view('backend/usuario/ver');
+
             $this->load->view('backend/template/html-footer');
+
         }
+
     }
 
     public function pag_login()
     {
         $dados['title'] = "PrimeEnfant";
+
         $dados['subtitle'] = "Logar no sistema";
 
         $this->load->view('backend/template/template-login', $dados);
+
         $this->load->view('backend/login');
     }
 
@@ -77,15 +91,51 @@ class Usuarios_Controller extends CI_Controller
         }
     }
 
-    public function email($to)
+    public function email($to, $name, $subject, $message)
     {
-        $this->email->from('naoresponda@valloritecnologia.com.br', 'Vallori Tecnologia');
-        $this->email->to($to);
 
-        $this->email->subject('Confirmação de cadastro');
-        $this->email->message('Testing the email class.');
+        // Load PHPMailer library
+        $this->load->library('phpmailer_lib');
 
-        $this->email->send();
+        // PHPMailer object
+        $mail = $this->phpmailer_lib->load();
+
+        // SMTP configuration
+        $mail->isSMTP();
+        $mail->Host = 'mail.valloritecnologia.com.br';
+        $mail->SMTPAuth = true;
+        $mail->Username = 'naoresponda@valloritecnologia.com.br';
+        $mail->Password = 'naoresponda@123';
+        $mail->SMTPSecure = 'ssl';
+        $mail->Port = 465;
+
+        $mail->setFrom('valloritecnologia.com.br', 'Vallori Tecnologia');
+        $mail->addReplyTo($to, $name);
+
+        // Add a recipient
+        $mail->addAddress($to);
+
+        // Email subject
+        $mail->Subject = $subject;
+
+        // Set email format to HTML
+        $mail->isHTML(true);
+
+        // Email body content
+        $mailContent = $message;
+        $mail->Body = $mailContent;
+
+        // Send email
+        if (!$mail->send()) {
+            $error = 'Message could not be sent.<br /> Mailer Error: ' . $mail->ErrorInfo;
+
+            print_r($error);
+            die;
+
+        } else {
+            return true;
+        }
+
     }
 
     public function logout()
@@ -136,9 +186,11 @@ class Usuarios_Controller extends CI_Controller
             } else {
                 $permissao = 3;
 
-                $message = 'teste';
+                $subject = 'Teste';
 
-                $this->mail->mail($email,$nome,'Verifique seu cadastro',$message);
+                $message = 'teste de email no sistema';
+
+                $this->email($email, $nome, $subject, $message);
 
             }
             if ($this->Muser->adicionar($nome, $telefone, $email, $senha, $permissao)) {

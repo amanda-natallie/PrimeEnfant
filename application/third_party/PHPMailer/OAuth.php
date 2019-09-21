@@ -5,7 +5,7 @@
  *
  * @see       https://github.com/PHPMailer/PHPMailer/ The PHPMailer GitHub project
  *
- * @author    Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+ * @author    Marcus Bointon (Synchro/coolbru) <PHPMailer@synchromedia.co.uk>
  * @author    Jim Jagielski (jimjag) <jimjag@gmail.com>
  * @author    Andy Prevost (codeworxtech) <codeworxtech@users.sourceforge.net>
  * @author    Brent R. Matzelle (original founder)
@@ -30,7 +30,7 @@ use League\OAuth2\Client\Token\AccessToken;
  *
  * @see     http://oauth2-client.thephpleague.com
  *
- * @author  Marcus Bointon (Synchro/coolbru) <phpmailer@synchromedia.co.uk>
+ * @author  Marcus Bointon (Synchro/coolbru) <PHPMailer@synchromedia.co.uk>
  */
 class OAuth
 {

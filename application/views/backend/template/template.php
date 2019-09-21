@@ -55,8 +55,9 @@
                         <li class="header">Menu Principal</li>
                         <li><a href="<?= base_url(); ?>"><i class="fa fa-globe"></i> <span>Home</span></a></li>
                         <?= apenasADM($p, 'usuarios', "Usuários", "fa-user"); ?>
-                        <li><a href="<?= base_url(); ?>cadastro"><i class="fa fa-copy"></i> <span>Gerenciar Cadastro</span></a></li>
-                        <li><a href="<?= base_url('formulario');?>"><i class="fa fa-list"></i> <span>Gerenciar Formulário</span> </a> </li>
+                        <?= apenasGESTOR($p, 'solicitacoes', "Ver Solicitações", "fa-database"); ?>
+                       <?= apenasADM($p, 'cadastro', "Gerenciar Cadastro", "fa-copy"); ?>
+                       <?= apenasADM($p, 'formulario', "Gerenciar Formulário", "fa-list"); ?>
                         <li><a href="<?= base_url('responder');?>"><i class="fa fa-list"></i> <span>Responder Formulário</span> </a> </li>
                         <li><a href="<?= base_url('ocorrencia');?>"><i class="fa fa-list"></i> <span>Ver Respostas</span> </a> </li>
                     </ul>

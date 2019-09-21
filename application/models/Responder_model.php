@@ -57,6 +57,7 @@ class Responder_model extends CI_Model
         $dados['res_cliente'] = $data['res_cliente'];
         $dados['res_campo'] = $data['res_campo'];
         $dados['res_resposta'] = $data['res_resposta'];
+        $dados['res_ocorrencia'] = $data['res_ocorrencia'];
         return $this->db->insert("tbl_respostas", $dados);
     }
 

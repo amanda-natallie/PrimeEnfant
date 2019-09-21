@@ -18,19 +18,49 @@ class Responder_Controller extends CI_Controller
 
     public function index()
     {
-
         $cliente = $this->session->userdata('userlogado');
-        $this->formulario = $this->moco->lista_formularios();
+        $this->formulario = $this->mresp->lista_formularios();
         $dados['p'] = $this->session->userdata('userlogado')->user_permissao;
         $dados['param'] = NULL;
         $dados['formulario'] = $this->formulario;
         $dados['title'] = "Gerenciar respostas";
         $dados['subtitle'] = " responstas do formularios";
 
-        render_template("ocorrencia/ver", $dados);
-
+        render_template("responder/ver", $dados);
     }
 
+    public function montarFormulario($id)
+    {
+        $this->formulario = $this->mresp->montarFormulario($id, $this->session->userdata('userlogado')->user_id);
+
+        $secoes = [];
+
+        $opcoes = [];
+
+        foreach ($this->formulario as $form) {
+
+            array_push($secoes, $form['ses_nome']);
+            if ($opcao = $this->mresp->montarOpcoes($form['cam_id'])) {
+                $opcoes[$form['cam_id']] = $opcao;
+            }
+        }
+
+        $dados['p'] = $this->session->userdata('userlogado')->user_permissao;
+
+        $dados['param'] = $id;
+
+        $dados['formularioMontado'] = $this->formulario;
+
+        $dados['secoes'] = $secoes;
+
+        $dados['opcoes'] = $opcoes;
+
+        $dados['title'] = "Gerenciar respostas";
+
+        $dados['subtitle'] = " responstas do formularios";
+
+        render_template("responder/ver", $dados);
+    }
 
     public function cadastrar($id)
     {
@@ -46,6 +76,8 @@ class Responder_Controller extends CI_Controller
             "oco_status" => 0,
         ];
 
+        $oco = $this->moco->adicionar($ocorrencias);
+
         $success = false;
 
         for ($i = 0; $i < sizeof($Campos); $i++) {
@@ -59,7 +91,8 @@ class Responder_Controller extends CI_Controller
                     $resposta = [
                         'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
                         'res_campo' => $Campos[$i]['cam_id'],
-                        'res_cliente' => $cliente->user_id
+                        'res_cliente' => $cliente->user_id,
+                        'res_ocorrencia' => $oco
                     ];
                     array_push($arr_formulario, $resposta);
 
@@ -70,7 +103,8 @@ class Responder_Controller extends CI_Controller
                 $resposta = [
                     'res_resposta' => $this->input->post($Campos[$i]['cam_name']),
                     'res_campo' => $Campos[$i]['cam_id'],
-                    'res_cliente' => $cliente->user_id
+                    'res_cliente' => $cliente->user_id,
+                    'res_ocorrencia' => $oco
                 ];
                 array_push($arr_formulario, $resposta);
 
@@ -78,19 +112,19 @@ class Responder_Controller extends CI_Controller
             }
 
         }
+
         if ($success) {
 
             foreach ($arr_formulario as $arr_formulario) {
 
                 $retorno = $this->mresp->adicionar($arr_formulario);
 
+
             }
 
             if ($retorno) {
 
-                $this->moco->adicionar($ocorrencias);
-
-                $urlRetorno = "responder/";
+                $urlRetorno = "responder";
 
                 redirect(base_url($urlRetorno));
 

@@ -30,6 +30,7 @@ class Usuarios_model extends CI_Model {
         $dados['user_telefone'] = $telefone;
         $dados['user_senha'] = sha1(md5($senha));
         $dados['user_permissao'] = $permissao;
+        $dados['valida'] = 0;
         return $this->db->insert("tbl_usuarios", $dados);
     }
 
